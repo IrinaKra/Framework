@@ -15,7 +15,7 @@ def test_CompanyLogo(driver, wait):
     assert driver.current_url == 'https://www.vpnunlimitedapp.com/en'
 
 
-'''TC-02 Verify if the header part is always visible and active link is highlihted'''
+'''TC-02 Verify if the header part is always visible and active link is highlighted'''
 
 def test_ActiveLink(driver):
     driver.set_window_size(1920, 1080)
