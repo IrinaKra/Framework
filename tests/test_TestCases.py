@@ -3,20 +3,21 @@ from selenium.webdriver.common.by import By
 import allure
 
 
-'''TC-01 The Company Logo is active and works correctly'''
+
 
 
 def test_CompanyLogo(driver, wait):
+    '''TC-01 The Company Logo is active and works correctly'''
     driver.set_window_size(1920, 1080) # if the browser window is not fullscreen, the header menu is not available
     driver.get('https://www.vpnunlimitedapp.com/en')
     with allure.step('First page'):
-        allure.attach('screen_shot', driver.get_screenshot_as_png(), type=allure.attachment_type.PNG)
+        allure.attach.file('./data/totally_open_source_kitten.png', attachment_type=allure.attachment_type.PNG)
     el1 = driver.find_element_by_xpath("//img[@class='sm-hide']")
     el1.click()
     el2 = driver.find_element_by_xpath("//ul[@class='nav navbar-nav navbar-right']/descendant::a[contains(text(),'Pricing')]")
     el2.click()
     with allure.step('Second page'):
-        allure.attach('screen_shot', driver.get_screenshot_as_png(), type=allure.attachment_type.PNG)
+        allure.attach.file('./data/totally_open_source_kitten.png', attachment_type=allure.attachment_type.PNG)
     wait.until(EC.element_to_be_clickable((By.XPATH, "//img[@class='sm-hide']"))).click()
     assert driver.current_url == 'https://www.vpnunlimitedapp.com/en'
 

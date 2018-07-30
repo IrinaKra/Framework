@@ -1,5 +1,6 @@
 {
   "first_test.py::test_FindVideo": true,
   "first_test.py::test_first": true,
+  "test_API.py": true,
   "test_FindVideo.py::test_FindVideo": true
 }
