@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import allure
 
 
-def test_CompanyLogo(driver, wait):
+def test_compan_logo(driver, wait):
     '''TC-01 The Company Logo is active and works correctly'''
     driver.set_window_size(1920, 1080) # if the browser window is not fullscreen, the header menu is not available
     driver.get('https://www.vpnunlimitedapp.com/en')
@@ -19,10 +19,8 @@ def test_CompanyLogo(driver, wait):
     assert driver.current_url == 'https://www.vpnunlimitedapp.com/en'
 
 
-
-'''TC-02 Verify if the header part is always visible and active link is highlighted'''
-
-def test_ActiveLink(driver):
+def test_active_link(driver):
+    '''TC-02 Verify if the header part is always visible and active link is highlighted'''
     driver.set_window_size(1920, 1080)
     driver.get('https://www.vpnunlimitedapp.com/en')
     el = driver.find_element_by_xpath("//a[text()='Extras']")
@@ -33,9 +31,8 @@ def test_ActiveLink(driver):
     assert color1 != color2
 
 
-'''TC-04 Verify if the registered user can log on the System'''
-
-def test_SignIn(driver, wait):
+def test_sign_in(driver, wait):
+    '''TC-04 Verify if the registered user can log on the System'''
     driver.set_window_size(1920, 1080)
     driver.get('https://www.vpnunlimitedapp.com/en')
     el1 = driver.find_element_by_xpath("//a[text()='Sign In']")
@@ -51,9 +48,8 @@ def test_SignIn(driver, wait):
     wait.until(EC.presence_of_element_located((By.XPATH, "//a[text()='My account']")))
 
 
-'''TC-07 Validate if the icons for different Platform are active and navigates correctly'''
-
-def test_IconPlatform(driver, wait):
+def test_icon_platform(driver, wait):
+    '''TC-07 Validate if the icons for different Platform are active and navigates correctly'''
     driver.get('https://www.vpnunlimitedapp.com/en')
     driver.find_element_by_xpath("//img[@alt='VPN Unlimited for macOS']").click()
     driver.switch_to.window(driver.window_handles[1])
@@ -65,9 +61,8 @@ def test_IconPlatform(driver, wait):
     wait.until(EC.presence_of_element_located((By.XPATH,"//h2[text()=' for iOS']")))
 
 
-'''TC-13 Validate if the user can subscribe for newsletter'''
-
-def test_Subscribe(driver, wait):
+def test_subscribe(driver, wait):
+    '''TC-13 Validate if the user can subscribe for newsletter'''
     driver.get('https://www.vpnunlimitedapp.com/en')
     email = driver.find_element_by_xpath("//input[@name='email']")
     email.send_keys("test@mail.ru")
