@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import allure
-from allure.contains import AttachmentType
+from allure.constants import AttachmentType
 
 
 def test_company_logo(driver, wait):
