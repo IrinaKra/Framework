@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import allure
 
 
-def test_compan_logo(driver, wait):
+def test_company_logo(driver, wait):
     '''TC-01 The Company Logo is active and works correctly'''
     driver.set_window_size(1920, 1080) # if the browser window is not fullscreen, the header menu is not available
     driver.get('https://www.vpnunlimitedapp.com/en')
