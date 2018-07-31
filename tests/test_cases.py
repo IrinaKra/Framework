@@ -70,3 +70,4 @@ def test_subscribe(driver, wait):
     wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='modal-popup--content']")))
     wait.until(EC.presence_of_element_located((By.XPATH, "//h3[text()='Thanks for subscribing!']")))
 
+#  --alluredir=reports/ --junitxml=report.xml
