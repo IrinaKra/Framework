@@ -34,7 +34,6 @@ def test_active_link(driver):
 
 def test_sign_in(driver, wait):
     '''TC-04 Verify if the registered user can log on the System'''
-    driver.set_window_size(1920, 1080)
     driver.get('https://www.vpnunlimitedapp.com/en')
     el1 = driver.find_element_by_xpath("//a[text()='Sign In']")
     el1.click()
