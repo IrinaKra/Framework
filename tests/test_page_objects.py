@@ -72,6 +72,8 @@ def test_company_logo(driver):
     assert driver.current_url == main_page
 
 
+el = "//a[text()='Extras']"
+
 def test_active_link(driver):
     '''TC-02 Verify if the header part is always visible and active link is highlighted'''
     web_page = MainPage(driver)
@@ -93,6 +95,7 @@ email = "s.kravchenko88@gmail.com"
 password = "testtest"
 
 def test_login_to_account(driver, wait):
+   '''TC-04 Verify if the registered user can log on the System'''
    web_page = MainPage(driver)
    web_page.open()
    with allure.step('Main page'):
@@ -112,6 +115,7 @@ def test_login_to_account(driver, wait):
 
 
 def test_icon_platform(driver, wait):
+    '''TC-07 Validate if the icons for different Platform are active and navigates correctly'''
     web_page = MainPage(driver)
     web_page.open()
     web_page.click_icon()
@@ -129,6 +133,7 @@ def test_icon_platform(driver, wait):
 email_test = 'test@mail.ru'
 
 def test_subscribe(driver, wait):
+    '''TC-13 Validate if the user can subscribe for newsletter'''
     web_page = MainPage(driver)
     web_page.open()
     with allure.step('Main page'):
