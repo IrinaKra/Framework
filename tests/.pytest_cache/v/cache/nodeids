@@ -1,7 +1,3 @@
 [
-  "test_page_objects.py::test_company_logo",
-  "test_page_objects.py::test_active_link",
-  "test_page_objects.py::test_login_to_account",
-  "test_page_objects.py::test_icon_platform",
-  "test_page_objects.py::test_subscribe"
+  "test_page_objects.py::test_icon_platform"
 ]

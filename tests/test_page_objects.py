@@ -67,6 +67,8 @@ def test_company_logo(driver):
     with allure.step('Pricing page'):
         allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
     web_page.find_company_logo()
+    with allure.step('Return to main page'):
+        allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
     assert driver.current_url == main_page
 
 
@@ -96,8 +98,6 @@ def test_login_to_account(driver, wait):
    with allure.step('Main page'):
        allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
    web_page.open_login_form(wait)
-   with allure.step('Login page'):
-       allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
    web_page.enter_email(email)
    web_page.enter_password(password)
    with allure.step('Login page fulfilled'):
@@ -114,13 +114,15 @@ def test_login_to_account(driver, wait):
 def test_icon_platform(driver, wait):
     web_page = MainPage(driver)
     web_page.open()
-    with allure.step('Main page'):
-        allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
     web_page.click_icon()
+    with allure.step('Platform icons'):
+        allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
     driver.switch_to.window(driver.window_handles[1])
     with allure.step('Second page'):
         allure.attach('screenshot', driver.get_screenshot_as_png(), type=AttachmentType.PNG)
     web_page.find_text(wait)
+    driver.close()
+    driver.switch_to.window(driver.window_handles[0])
 
 
 
