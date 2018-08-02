@@ -18,8 +18,6 @@ class MainPage:
 
    def find_company_logo(self):
        self.driver.find_element_by_xpath("//img[@class='sm-hide']").click()
-       with allure.step('Return to main page'):
-           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
    def open_link_Pricing(self):
        self.driver.find_element_by_xpath("//ul[@class='nav navbar-nav navbar-right']/descendant::a[contains(text(),'Pricing')]").click()
@@ -28,8 +26,6 @@ class MainPage:
 
    def link_color(self):
        color = self.driver.find_element_by_xpath("//a[text()='Pricing']").value_of_css_property("color")
-       with allure.step('Pricing page'):
-           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
        return color
 
    def open_login_form(self):
@@ -62,16 +58,14 @@ class MainPage:
 
    def click_icon(self):
        self.driver.find_element_by_xpath("//img[@alt='VPN Unlimited for macOS']").click()
-       with allure.step('Platform icons'):
-           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
    def next_tab(self):
        self.driver.switch_to.window(self.driver.window_handles[1])
-       with allure.step('Second page'):
-           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
    def find_text(self):
        self.wait.until(EC.presence_of_element_located((By.XPATH, "//h2[text()=' for macOS']")))
+       with allure.step('Platform page'):
+           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
        self.driver.close()
        return self
 
