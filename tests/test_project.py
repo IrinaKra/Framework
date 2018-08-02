@@ -1,5 +1,5 @@
 from pages.main_page import MainPage
-from tests.data import *
+from data import *
 
 
 
