@@ -24,11 +24,9 @@ def test_active_link(driver):
     '''TC-02 Verify if the header part is always visible and active link is highlighted'''
     driver.set_window_size(1920, 1080)
     driver.get('https://www.vpnunlimitedapp.com/en')
-    el = driver.find_element_by_xpath("//a[text()='Extras']")
-    color1 = el.value_of_css_property("color")
-    el.click()
-    el1 = driver.find_element_by_xpath("//a[text()='Extras']")
-    color2 = el1.value_of_css_property("color")
+    color1 = driver.find_element_by_xpath("//a[text()='Extras']").value_of_css_property("color")
+    driver.find_element_by_xpath("//a[text()='Extras']").click()
+    color2 = driver.find_element_by_xpath("//a[text()='Extras']").value_of_css_property("color")
     assert color1 != color2
 
 
