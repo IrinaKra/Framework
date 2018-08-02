@@ -2,6 +2,7 @@ from pages.main_page import MainPage
 from tests.data import *
 
 
+
 def test_company_logo(driver, wait):
     '''TC-01 The Company Logo is active and works correctly'''
     web_page = MainPage(driver, wait)
