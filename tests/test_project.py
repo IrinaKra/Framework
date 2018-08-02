@@ -18,7 +18,7 @@ def test_active_link(driver, wait):
     web_page = MainPage(driver, wait)
     web_page.open()
     link_color = web_page.link_color()
-    web_page.open_link_Pricing()
+    web_page.open_link_Extras()
     active_link_color = web_page.link_color()
     assert link_color != active_link_color
 
