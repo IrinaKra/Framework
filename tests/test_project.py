@@ -1,5 +1,10 @@
-from pages.main_page import *
 from data import *
+from pages.download_page import DownloadPage
+from pages.extras_page import ExtrasPage
+from pages.login_page import LoginPage
+from pages.main_page import MainPage
+from pages.pricing_page import PricingPage
+from pages.subscribe_page import SubscribePage
 
 
 def test_company_logo(driver, wait):

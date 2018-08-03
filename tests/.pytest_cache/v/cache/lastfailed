@@ -3,8 +3,11 @@
   "first_test.py::test_first": true,
   "test_API.py": true,
   "test_FindVideo.py::test_FindVideo": true,
+  "test_add_task.py::test_second": true,
   "test_cases.py::test_sign_in": true,
+  "test_find_element.py::test_element_not_visible": true,
   "test_my_project.py": true,
   "test_page_objects.py::test_company_logo": true,
-  "test_page_objects.py::test_subscribe": true
+  "test_page_objects.py::test_subscribe": true,
+  "test_project.py": true
 }
