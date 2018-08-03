@@ -57,4 +57,4 @@ def test_subscribe(driver, wait):
     link_page.subcribe_confirm()
 
 
-#  java -jar C:\Users\j\Downloads\jenkins.war
+
