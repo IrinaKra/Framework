@@ -19,11 +19,9 @@ class PlanPage:
 
    def plan(self):
        self.driver.find_element_by_xpath("//a[@class='prices_cnt--item price-month ']").click()
-
-   def find_element(self):
        self.wait.until(
            EC.presence_of_element_located((By.XPATH, "//div[@class='pricing_title_in_header']/descendant::h2")))
-       with allure.step('Pricing page'):
+       with allure.step('Login form'):
            allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
        return self
 

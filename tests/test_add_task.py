@@ -7,7 +7,6 @@ def test_element_not_visible(driver, wait):
     web_page = PlanPage(driver, wait)
     web_page.open()
     web_page.plan()
-    web_page.find_element()
     web_page.change_plan()
     web_page.element_not_visible()
 
