@@ -20,6 +20,8 @@ class MainPage:
 
    def company_logo(self):
        self.driver.find_element_by_xpath("//img[@class='sm-hide']").click()
+       with allure.step('Main page'):
+           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
 
 
