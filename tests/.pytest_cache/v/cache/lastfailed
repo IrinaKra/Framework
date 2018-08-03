@@ -9,5 +9,6 @@
   "test_my_project.py": true,
   "test_page_objects.py::test_company_logo": true,
   "test_page_objects.py::test_subscribe": true,
-  "test_project.py": true
+  "test_project.py": true,
+  "test_project.py::test_company_logo": true
 }

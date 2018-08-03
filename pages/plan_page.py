@@ -19,12 +19,13 @@ class PlanPage:
 
    def plan(self):
        self.driver.find_element_by_xpath("//a[@class='prices_cnt--item price-month ']").click()
-       with allure.step('Plan page'):
-           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
    def find_element(self):
        self.wait.until(
            EC.presence_of_element_located((By.XPATH, "//div[@class='pricing_title_in_header']/descendant::h2")))
+       with allure.step('Pricing page'):
+           allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
+       return self
 
    def change_plan(self):
        self.wait.until(EC.element_to_be_clickable((By.XPATH,"//a[contains(text(),'Change plan')]"))).click()
