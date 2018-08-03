@@ -8,7 +8,7 @@ def test_company_logo(driver, wait):
     link_page = PricingPage(driver, wait)
     web_page.open()
     link_page.open()
-    web_page.company_logo()
+    link_page.company_logo()
     assert driver.current_url == main_page
 
 
