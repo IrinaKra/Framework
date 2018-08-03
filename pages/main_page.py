@@ -4,7 +4,6 @@ import allure
 from allure.constants import AttachmentType
 
 
-
 class MainPage:
 
    def __init__(self, driver, wait):
@@ -17,7 +16,6 @@ class MainPage:
        with allure.step('Main page'):
            allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
        return self
-
 
 
 class PricingPage:
@@ -37,7 +35,6 @@ class PricingPage:
            allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
 
-
 class ExtrasPage:
 
    def __init__(self, driver, wait):
@@ -52,7 +49,6 @@ class ExtrasPage:
    def link_color(self):
        color = self.driver.find_element_by_xpath("//a[text()='Extras']").value_of_css_property("color")
        return color
-
 
 
 class LoginPage:
@@ -90,7 +86,6 @@ class LoginPage:
            allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
 
 
-
 class DownloadPage:
 
    def __init__(self, driver, wait):
@@ -112,7 +107,6 @@ class DownloadPage:
 
    def previous_tab(self):
        self.driver.switch_to.window(self.driver.window_handles[0])
-
 
 
 class SubscribePage():
